@@ -1,3 +1,5 @@
+import os
+
 from scrapy.crawler import CrawlerProcess
 from multiprocessing.context import Process
 import discord
@@ -290,4 +292,4 @@ async def on_ready():
 #################
 # Token del bot de Discord "UBICAR EN OTRO LUGAR"
 #################
-client.run(SECRET_TOKEN_BOT)
+client.run(os.environ["TOKEN"])
