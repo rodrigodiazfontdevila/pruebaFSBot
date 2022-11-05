@@ -280,15 +280,15 @@ async def on_ready():
     novedadesProcesarores.start()
     novedadesTD.start()
 
-    global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
-    global ultimaOLId, ultimaOLTitulo, ultimaOLDes
-    global ultimaNovedadProcesadores
-    global ultimaNovedadTD
+    #global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
+    #global ultimaOLId, ultimaOLTitulo, ultimaOLDes
+    #global ultimaNovedadProcesadores
+    #global ultimaNovedadTD
 
-    ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
-    ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-    ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
-    ultimaNovedadTD = ScrappyTDInicial()
+    #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+    #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+    #ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
+    #ultimaNovedadTD = ScrappyTDInicial()
 
 
 
