@@ -37,13 +37,13 @@ global ultimaOLId, ultimaOLTitulo, ultimaOLDes
 global ultimaNovedadProcesadores
 global ultimaNovedadTD
 
-ultimaPPSId="post-1947"
+ultimaPPSId=""
 ultimaPPSTitulo, ultimaPPSDes = "", ""
-ultimaOLId="post-1543"
+ultimaOLId=""
 ultimaOLTitulo=""
 ultimaOLDes=""
-ultimaNovedadProcesadores = "Están publicadas las dispositivas de clase correspondientes al Tema 08 (Entradas y salidas digitales) y al tema 09 (Entradas y salidas con periféricos)."
-ultimaNovedadTD = "Están publicadas las notas del primer parcial junto con el enunciado y las soluciones propuestas."
+ultimaNovedadProcesadores = ""
+ultimaNovedadTD = ""
 
 
 
@@ -280,15 +280,15 @@ async def on_ready():
     novedadesProcesarores.start()
     novedadesTD.start()
 
-    #global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
-    #global ultimaOLId, ultimaOLTitulo, ultimaOLDes
-    #global ultimaNovedadProcesadores
-    #global ultimaNovedadTD
+    global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
+    global ultimaOLId, ultimaOLTitulo, ultimaOLDes
+    global ultimaNovedadProcesadores
+    global ultimaNovedadTD
 
-    #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
-    #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-    #ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
-    #ultimaNovedadTD = ScrappyTDInicial()
+    ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+    ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+    ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
+    ultimaNovedadTD = ScrappyTDInicial()
 
 
 
