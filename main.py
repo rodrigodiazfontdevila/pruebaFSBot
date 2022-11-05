@@ -37,10 +37,13 @@ global ultimaOLId, ultimaOLTitulo, ultimaOLDes
 global ultimaNovedadProcesadores
 global ultimaNovedadTD
 
-ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = "", "", ""
-ultimaOLId, ultimaOLTitulo, ultimaOLDes = "", "", ""
-ultimaNovedadProcesadores = ""
-ultimaNovedadTD = ""
+ultimaPPSId="post-1947"
+ultimaPPSTitulo, ultimaPPSDes = "", ""
+ultimaOLId="post-1543"
+ultimaOLTitulo=""
+ultimaOLDes=""
+ultimaNovedadProcesadores = "Están publicadas las dispositivas de clase correspondientes al Tema 08 (Entradas y salidas digitales) y al tema 09 (Entradas y salidas con periféricos)."
+ultimaNovedadTD = "Están publicadas las notas del primer parcial junto con el enunciado y las soluciones propuestas."
 
 
 
@@ -74,10 +77,11 @@ async def on_message(message):
 # #################
 # # Funcion para revisar y publicar las ultimas Pasantias publicadas (cada 30min)
 # #################
+
 @tasks.loop(seconds=1800)
 async def pasantias():
     # Canal de pasantias
-    channel = client.get_channel(ID_CHANNEL_PASANTIAS)
+    channel = client.get_channel(int(ID_CHANNEL_PASANTIAS))
 
     # Ejecuta Scrappy de PPS
     ScrappyPPS()
@@ -139,7 +143,7 @@ async def pasantias():
 @tasks.loop(seconds=1800)
 async def ofertasLaborales():
     # Canal de ofertas laborales
-    channel = client.get_channel(ID_CHANNEL_OFERTAS)
+    channel = client.get_channel(int(ID_CHANNEL_OFERTAS))
 
     # Ejecuta Scrappy de OL
     ScrappyOL()
@@ -200,7 +204,7 @@ async def ofertasLaborales():
 @tasks.loop(seconds=900)
 async def novedadesProcesarores():
     # Canal de la microprocesadores
-    channel = client.get_channel(ID_CHANNEL_MICROPROCESADORES)
+    channel = client.get_channel(int(ID_CHANNEL_MICROPROCESADORES))
 
     # Ejecuta Scrappy de Procesadores
     ScrappyProcesadores()
@@ -234,7 +238,7 @@ async def novedadesProcesarores():
 @tasks.loop(seconds=960)
 async def novedadesTD():
     # Canal de transmision de datos
-    channel = client.get_channel(ID_CHANNEL_TRANSMISION_DE_DATOS)
+    channel = client.get_channel(int(ID_CHANNEL_TRANSMISION_DE_DATOS))
 
     # Ejecuta Scrappy de Trans. de Datos
     ScrappyTD()
