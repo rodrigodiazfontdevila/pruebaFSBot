@@ -134,6 +134,7 @@ async def pasantias():
                     break
             else:
                 await channel.send(msgPPS)
+                ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
 
 
 #################
@@ -196,6 +197,7 @@ async def ofertasLaborales():
                     break
             else:
                 await channel.send(msgOL)
+                ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
 
 
 # #################
