@@ -125,16 +125,15 @@ async def pasantias():
                     if (des == ultimaPPSDes):
                         break
                     else:
-                        await channel.send(msgPPS)
                         ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+                        await channel.send(msgPPS)
                         break
                 else:
-                    await channel.send(msgPPS)
                     ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+                    await channel.send(msgPPS)
                     break
             else:
                 await channel.send(msgPPS)
-                ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
 
 
 #################
@@ -188,16 +187,15 @@ async def ofertasLaborales():
                     if (des == ultimaOLDes):
                         break
                     else:
-                        await channel.send(msgOL)
                         ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                        await channel.send(msgOL)
                         break
                 else:
-                    await channel.send(msgOL)
                     ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                    await channel.send(msgOL)
                     break
             else:
                 await channel.send(msgOL)
-                ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
 
 
 # #################
