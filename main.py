@@ -95,6 +95,10 @@ async def pasantias():
         pasantias = json.load(contenido)
 
         for pasantia in pasantias:
+            c1 = "c1"
+            c2 = "c2"
+            c3 = "c3"
+            c4 = "c4"
             des = ""
             pas = pasantia
             id = "".join(pas["id"])
@@ -123,17 +127,21 @@ async def pasantias():
             if (id == ultimaPPSId):
                 if (titulo == ultimaPPSTitulo):
                     if (des == ultimaPPSDes):
+                        await channel.send(c4)
                         break
                     else:
                         ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
                         await channel.send(msgPPS)
+                        await channel.send(c3)
                         break
                 else:
                     ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
                     await channel.send(msgPPS)
+                    await channel.send(c2)
                     break
             else:
                 await channel.send(msgPPS)
+                await channel.send(c1)
 
 
 #################
@@ -157,6 +165,10 @@ async def ofertasLaborales():
         ofertas = json.load(contenido)
 
         for oferta in ofertas:
+            c1 = "c1"
+            c2 = "c2"
+            c3 = "c3"
+            c4 = "c4"
             des = ""
             of = oferta
             id = "".join(of["id"])
@@ -185,17 +197,21 @@ async def ofertasLaborales():
             if (id == ultimaOLId):
                 if (titulo == ultimaOLTitulo):
                     if (des == ultimaOLDes):
+                        await channel.send(c4)
                         break
                     else:
                         ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
                         await channel.send(msgOL)
+                        await channel.send(c3)
                         break
                 else:
                     ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
                     await channel.send(msgOL)
+                    await channel.send(c2)
                     break
             else:
                 await channel.send(msgOL)
+                await channel.send(c1)
 
 
 # #################
