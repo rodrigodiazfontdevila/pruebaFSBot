@@ -300,7 +300,8 @@ async def on_ready():
     global ultimaOLId, ultimaOLTitulo, ultimaOLDes
     global ultimaNovedadProcesadores
     global ultimaNovedadTD
-
+    
+    ultimaOLId = "post-1961"
     #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
     #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
     #ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
