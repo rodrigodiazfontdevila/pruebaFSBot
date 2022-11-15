@@ -39,7 +39,7 @@ global ultimaNovedadTD
 
 ultimaPPSId=""
 ultimaPPSTitulo, ultimaPPSDes = "", ""
-ultimaOLId=""
+ultimaOLId="post-1961"
 ultimaOLTitulo=""
 ultimaOLDes=""
 ultimaNovedadProcesadores = ""
@@ -148,7 +148,7 @@ async def pasantias():
 # Funcion para revisar y publicar las ultimas Ofertas Laborales publicadas (cada 30min)
 #################
 
-@tasks.loop(seconds=1800)
+@tasks.loop(seconds=120)
 async def ofertasLaborales():
     # Canal de ofertas laborales
     channel = client.get_channel(int(ID_CHANNEL_OFERTAS))
@@ -291,20 +291,20 @@ async def novedadesTD():
 async def on_ready():
     print(f'Hi, the bot its alive!\n {client.user} is now online!')
 
-    pasantias.start()
+    #pasantias.start()
     ofertasLaborales.start()
-    novedadesProcesarores.start()
-    novedadesTD.start()
+    #novedadesProcesarores.start()
+    #novedadesTD.start()
 
     global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
     global ultimaOLId, ultimaOLTitulo, ultimaOLDes
     global ultimaNovedadProcesadores
     global ultimaNovedadTD
 
-    ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+    #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
     ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-    ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
-    ultimaNovedadTD = ScrappyTDInicial()
+    #ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
+    #ultimaNovedadTD = ScrappyTDInicial()
 
 
 
