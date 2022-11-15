@@ -63,14 +63,14 @@ async def on_message(message):
 
     # Para el msj: $latest
     if f'$state' in message_content:
-        #await message.channel.send("__**Ultima Pasatia y PPS:**__")
-        #await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
+        await message.channel.send("__**Ultima Pasatia y PPS:**__")
+        await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
         await message.channel.send("__**Ultima Oferta Laboral:**__")
         await message.channel.send(ultimaOLId + "\n" + ultimaOLTitulo + "\n" + ultimaOLDes)
-        #await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
-        #await message.channel.send(ultimaNovedadProcesadores)
-        #await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
-        #await message.channel.send(ultimaNovedadTD)
+        await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
+        await message.channel.send(ultimaNovedadProcesadores)
+        await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
+        await message.channel.send(ultimaNovedadTD)
 
 
 
@@ -127,6 +127,7 @@ async def pasantias():
             if (id == ultimaPPSId):
                 if (titulo == ultimaPPSTitulo):
                     if (des == ultimaPPSDes):
+                        ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
                         await channel.send(c4)
                         break
                     else:
@@ -148,7 +149,7 @@ async def pasantias():
 # Funcion para revisar y publicar las ultimas Ofertas Laborales publicadas (cada 30min)
 #################
 
-@tasks.loop(seconds=120)
+@tasks.loop(seconds=1800)
 async def ofertasLaborales():
     # Canal de ofertas laborales
     channel = client.get_channel(int(ID_CHANNEL_OFERTAS))
@@ -197,17 +198,18 @@ async def ofertasLaborales():
             if (id == ultimaOLId):
                 if (titulo == ultimaOLTitulo):
                     if (des == ultimaOLDes):
+                        ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
                         await channel.send(c4)
                         break
                     else:
-                        #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-                        #await channel.send(msgOL)
-                        #await channel.send(c3)
+                        ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                        await channel.send(msgOL)
+                        await channel.send(c3)
                         break
                 else:
-                    #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-                    #await channel.send(msgOL)
-                    #await channel.send(c2)
+                    ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                    await channel.send(msgOL)
+                    await channel.send(c2)
                     break
             else:
                 await channel.send(msgOL)
@@ -291,21 +293,20 @@ async def novedadesTD():
 async def on_ready():
     print(f'Hi, the bot its alive!\n {client.user} is now online!')
 
-    #pasantias.start()
+    pasantias.start()
     ofertasLaborales.start()
-    #novedadesProcesarores.start()
-    #novedadesTD.start()
+    novedadesProcesarores.start()
+    novedadesTD.start()
 
     global ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes
     global ultimaOLId, ultimaOLTitulo, ultimaOLDes
     global ultimaNovedadProcesadores
     global ultimaNovedadTD
 
-    ultimaOLId = "post-1961"
-    #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
-    #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-    #ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
-    #ultimaNovedadTD = ScrappyTDInicial()
+    ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
+    ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+    ultimaNovedadProcesadores = ScrappyProcesadoresInicial()
+    ultimaNovedadTD = ScrappyTDInicial()
 
 
 
