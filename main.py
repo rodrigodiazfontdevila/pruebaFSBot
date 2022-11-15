@@ -39,7 +39,7 @@ global ultimaNovedadTD
 
 ultimaPPSId=""
 ultimaPPSTitulo, ultimaPPSDes = "", ""
-ultimaOLId="post-1961"
+ultimaOLId=""
 ultimaOLTitulo=""
 ultimaOLDes=""
 ultimaNovedadProcesadores = ""
@@ -62,13 +62,31 @@ async def on_message(message):
         await message.channel.send('Buenos dias, soy un Bot que te mantiene al tanto de las ultimas noticias!!')
 
     # Para el msj: $latest
-    if f'$state' in message_content:
+    if f'$stateALL' in message_content:
         await message.channel.send("__**Ultima Pasatia y PPS:**__")
         await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
         await message.channel.send("__**Ultima Oferta Laboral:**__")
         await message.channel.send(ultimaOLId + "\n" + ultimaOLTitulo + "\n" + ultimaOLDes)
         await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
         await message.channel.send(ultimaNovedadProcesadores)
+        await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
+        await message.channel.send(ultimaNovedadTD)
+
+    if f'$statePPS' in message_content:
+        await message.channel.send("__**Ultima Pasatia y PPS:**__")
+        await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
+
+
+    if f'$stateOL' in message_content:
+        await message.channel.send("__**Ultima Oferta Laboral:**__")
+        await message.channel.send(ultimaOLId + "\n" + ultimaOLTitulo + "\n" + ultimaOLDes)
+
+
+    if f'$statePRO' in message_content:
+        await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
+        await message.channel.send(ultimaNovedadProcesadores)
+
+    if f'$stateTD' in message_content:
         await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
         await message.channel.send(ultimaNovedadTD)
 
