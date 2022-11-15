@@ -72,21 +72,21 @@ async def on_message(message):
         await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
         await message.channel.send(ultimaNovedadTD)
 
-    if f'$statepps' in message_content:
+    if f'$pps' in message_content:
         await message.channel.send("__**Ultima Pasatia y PPS:**__")
         await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
 
 
-    if f'$stateol' in message_content:
+    if f'$ol' in message_content:
         await message.channel.send("__**Ultima Oferta Laboral:**__")
         await message.channel.send(ultimaOLId + "\n" + ultimaOLTitulo + "\n" + ultimaOLDes)
 
 
-    if f'$statepro' in message_content:
+    if f'$pro' in message_content:
         await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
         await message.channel.send(ultimaNovedadProcesadores)
 
-    if f'$statetd' in message_content:
+    if f'$td' in message_content:
         await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
         await message.channel.send(ultimaNovedadTD)
 
