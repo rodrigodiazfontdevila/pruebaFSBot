@@ -63,14 +63,14 @@ async def on_message(message):
 
     # Para el msj: $latest
     if f'$state' in message_content:
-        await message.channel.send("__**Ultima Pasatia y PPS:**__")
-        await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
+        #await message.channel.send("__**Ultima Pasatia y PPS:**__")
+        #await message.channel.send(ultimaPPSId + "\n" + ultimaPPSTitulo + "\n" + ultimaPPSDes)
         await message.channel.send("__**Ultima Oferta Laboral:**__")
         await message.channel.send(ultimaOLId + "\n" + ultimaOLTitulo + "\n" + ultimaOLDes)
-        await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
-        await message.channel.send(ultimaNovedadProcesadores)
-        await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
-        await message.channel.send(ultimaNovedadTD)
+        #await message.channel.send("__**Ultima Novedad de Sist. con Microprocesadores:**__")
+        #await message.channel.send(ultimaNovedadProcesadores)
+        #await message.channel.send("__**Ultima Novedad de Transmisiones de Datos:**__")
+        #await message.channel.send(ultimaNovedadTD)
 
 
 
@@ -200,14 +200,14 @@ async def ofertasLaborales():
                         await channel.send(c4)
                         break
                     else:
-                        ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-                        await channel.send(msgOL)
-                        await channel.send(c3)
+                        #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                        #await channel.send(msgOL)
+                        #await channel.send(c3)
                         break
                 else:
-                    ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
-                    await channel.send(msgOL)
-                    await channel.send(c2)
+                    #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
+                    #await channel.send(msgOL)
+                    #await channel.send(c2)
                     break
             else:
                 await channel.send(msgOL)
@@ -300,7 +300,7 @@ async def on_ready():
     global ultimaOLId, ultimaOLTitulo, ultimaOLDes
     global ultimaNovedadProcesadores
     global ultimaNovedadTD
-    
+
     ultimaOLId = "post-1961"
     #ultimaPPSId, ultimaPPSTitulo, ultimaPPSDes = ScrappyPPSInicial()
     #ultimaOLId, ultimaOLTitulo, ultimaOLDes = ScrappyOLInicial()
