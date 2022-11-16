@@ -37,11 +37,12 @@ global ultimaOLId, ultimaOLTitulo, ultimaOLDes
 global ultimaNovedadProcesadores
 global ultimaNovedadTD
 
-ultimaPPSId=""
-ultimaPPSTitulo, ultimaPPSDes = "", ""
-ultimaOLId=""
-ultimaOLTitulo=""
-ultimaOLDes=""
+ultimaPPSId = ""
+ultimaPPSTitulo = ""
+ultimaPPSDes = ""
+ultimaOLId = ""
+ultimaOLTitulo = ""
+ultimaOLDes = ""
 ultimaNovedadProcesadores = ""
 ultimaNovedadTD = ""
 
