@@ -1,7 +1,4 @@
 import os
-
-from scrapy.crawler import CrawlerProcess
-from multiprocessing.context import Process
 import discord
 from ScrappyPPS import ScrappyPPS
 from ScrappyPPS import ScrappyPPSInicial
@@ -20,7 +17,7 @@ config.read('config.ini')
 
 # Variables globales de configuracion
 
-#SECRET_TOKEN_BOT = config['DISCORD']['SECRET_TOKEN_BOT']
+SECRET_TOKEN_BOT = config['DISCORD']['SECRET_TOKEN_BOT']
 ID_CHANNEL_PASANTIAS = config['DISCORD']['ID_CHANNEL_PASANTIAS']
 ID_CHANNEL_OFERTAS = config['DISCORD']['ID_CHANNEL_OFERTAS']
 ID_CHANNEL_MICROPROCESADORES = config['DISCORD']['ID_CHANNEL_MICROPROCESADORES']
@@ -111,6 +108,7 @@ async def pasantias():
     ruta = 'pasantias.json'
     with open(ruta) as contenido:
 
+        print(contenido)
         pasantias = json.load(contenido)
 
         for pasantia in pasantias:
@@ -168,7 +166,7 @@ async def pasantias():
 # Funcion para revisar y publicar las ultimas Ofertas Laborales publicadas (cada 30min)
 #################
 
-@tasks.loop(seconds=1800)
+@tasks.loop(seconds=1920)
 async def ofertasLaborales():
     # Canal de ofertas laborales
     channel = client.get_channel(int(ID_CHANNEL_OFERTAS))
@@ -181,7 +179,7 @@ async def ofertasLaborales():
     # Lee el archivo y publicar publicaciones nuevas si es que hay
     ruta = 'ofertas.json'
     with open(ruta) as contenido:
-
+        print(contenido)
         ofertas = json.load(contenido)
 
         for oferta in ofertas:
@@ -251,6 +249,7 @@ async def novedadesProcesarores():
     ruta = 'novedadesProcesadores.json'
     with open(ruta) as contenido:
 
+        print(contenido)
         novedades = json.load(contenido)
 
         for novedad in novedades:
@@ -272,7 +271,7 @@ async def novedadesProcesarores():
 # #################
 # # Funcion para revisar y publicar las ultimas novedades publicadas de Trans. de Datos (cada 15min)
 # #################
-@tasks.loop(seconds=960)
+@tasks.loop(seconds=1020)
 async def novedadesTD():
     # Canal de transmision de datos
     channel = client.get_channel(int(ID_CHANNEL_TRANSMISION_DE_DATOS))
@@ -285,6 +284,7 @@ async def novedadesTD():
     ruta = 'novedadesTD.json'
     with open(ruta) as contenido:
 
+        print(contenido)
         novedades = json.load(contenido)
 
         for novedad in novedades:
@@ -333,4 +333,4 @@ async def on_ready():
 #################
 # Token del bot de Discord "UBICAR EN OTRO LUGAR"
 #################
-client.run(os.environ["TOKEN"])
+client.run(SECRET_TOKEN_BOT)
