@@ -97,7 +97,7 @@ async def on_message(message):
 @tasks.loop(seconds=1800)
 async def pasantias():
     # Canal de pasantias
-    channel = client.get_channel(int(ID_CHANNEL_PASANTIAS))
+    channel = client.get_channel(int(os.environ[ID_CHANNEL_PASANTIAS]))
 
     # Ejecuta Scrappy de PPS
     ScrappyPPS()
@@ -169,7 +169,7 @@ async def pasantias():
 @tasks.loop(seconds=1920)
 async def ofertasLaborales():
     # Canal de ofertas laborales
-    channel = client.get_channel(int(ID_CHANNEL_OFERTAS))
+    channel = client.get_channel(int(os.environ[ID_CHANNEL_OFERTAS]))
 
     # Ejecuta Scrappy de OL
     ScrappyOL()
@@ -239,7 +239,7 @@ async def ofertasLaborales():
 @tasks.loop(seconds=900)
 async def novedadesProcesarores():
     # Canal de la microprocesadores
-    channel = client.get_channel(int(ID_CHANNEL_MICROPROCESADORES))
+    channel = client.get_channel(int(os.environ[ID_CHANNEL_MICROPROCESADORES]))
 
     # Ejecuta Scrappy de Procesadores
     ScrappyProcesadores()
@@ -274,7 +274,7 @@ async def novedadesProcesarores():
 @tasks.loop(seconds=1020)
 async def novedadesTD():
     # Canal de transmision de datos
-    channel = client.get_channel(int(ID_CHANNEL_TRANSMISION_DE_DATOS))
+    channel = client.get_channel(int(os.environ[ID_CHANNEL_TRANSMISION_DE_DATOS]))
 
     # Ejecuta Scrappy de Trans. de Datos
     ScrappyTD()
